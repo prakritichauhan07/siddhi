@@ -23,6 +23,7 @@ install:
   - export PATH=$MVN_HOME/bin:$PATH
   - mvn --version
   - export JAVA_HOME=/usr/lib/jvm/adoptopenjdk-11-hotspot-arm64  
+script: mvn -q test -B  
 
 after_success:
   - bash <(curl -s https://codecov.io/bash)
