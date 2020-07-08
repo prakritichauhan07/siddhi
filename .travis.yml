@@ -18,13 +18,13 @@ arch:
   - arm64
 install:
   - if [ "${TRAVIS_CPU_ARCH}" == "arm64" ]; then 
-    export MVN_HOME=$HOME/apache-maven-3.6.3
+    export MVN_HOME=$HOME/apache-maven-3.6.3;
     wget https://archive.apache.org/dist/maven/maven-3/3.6.3/binaries/apache-maven-3.6.3-bin.tar.gz -P $HOME; 
     tar xzvf $HOME/apache-maven-3.6.3-bin.tar.gz -C $HOME;
-    java --version
-    export PATH=$MVN_HOME/bin:$PATH
-    mvn --version
-    export JAVA_HOME=/usr/lib/jvm/adoptopenjdk-11-hotspot-arm64  
+    java --version;
+    export PATH=$MVN_HOME/bin:$PATH;
+    mvn --version;
+    export JAVA_HOME=/usr/lib/jvm/adoptopenjdk-11-hotspot-arm64;  
     fi
 script: mvn -q test -B  
 
